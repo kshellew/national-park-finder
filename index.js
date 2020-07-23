@@ -50,7 +50,7 @@ function displayResults(responseJson) {
   console.log(responseJson);
   $('#results-list').empty();
   $('#js-state-code').val('');
-  $('#js-max-results').val('');
+  $('#js-max-results').val('10');
   // iterate through the returned object
   for (let i = 0; i < responseJson.data.length; i++){
     // for each object add a list item to the results list with the park name, description, website url and address
