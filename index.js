@@ -19,7 +19,7 @@ function formatQueryParams(params) {
   return queryItems.join('&');
 }
 
-function getPark(query, maxResults) {
+function getPark(query, maxResults=10) {
   const params = {
     api_key: apiKey,
     limit: maxResults,
@@ -57,7 +57,7 @@ function displayResults(responseJson) {
     $('#results-list').append(
       `<li><h3>${responseJson.data[i].fullName}</h3>
       <p>Description: ${responseJson.data[i].description}</p>
-      <p>Park URL: ${responseJson.data[i].url}</p>
+      <a href='${responseJson.data[i].url}' target="_blank">Park URL</a> 
       <p>Park Directions: ${responseJson.data[i].directionsInfo}</p>`
     )};
   //display the results section  
